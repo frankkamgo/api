@@ -139,6 +139,10 @@ public class View_address {
         this.rueretour = rueretour;
         this.numretour = numretour;
     }
+
+    public View_address(int idadr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   /**
     * getter idloc
     * @return identifiant de location_taxi

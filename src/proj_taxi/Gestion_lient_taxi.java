@@ -137,7 +137,7 @@ public class Gestion_lient_taxi {
             System.out.println("erreur " + e.getMessage());
         }
     }
-        
+      /*  
         public void derncom() {
         try {
             LocalDate dt = ((location_DAO) client_taxi_DAO).dateloc(clActuel);
@@ -148,7 +148,7 @@ public class Gestion_lient_taxi {
             System.out.println("erreur " + e.getMessage());
         }
     }
-        
+      */  
     
 
 }

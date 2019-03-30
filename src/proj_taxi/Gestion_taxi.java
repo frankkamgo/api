@@ -24,7 +24,7 @@ public class Gestion_taxi {
     public Gestion_taxi() {
     }
     
-     public void gestion() {
+     public void gestion() throws SQLException {
         Connection dbConnect = dbconnexion.getConnection();
         if (dbConnect == null) {
             System.out.println("connection invalide");
@@ -37,12 +37,13 @@ public class Gestion_taxi {
         //client_taxi_DAO.setConnection(dbConnect);
         Gestion_lient_taxi gclient=new Gestion_lient_taxi();
        Gestion_vehicule_taxi gvehicule=new  Gestion_vehicule_taxi();
+       Affiche_view vue =new Affiche_view();
     // public void menu(){
         int ch = 0;
         do {
             System.out.println("\t\t\t\tACCUEIL");
             System.out.println("");
-            System.out.println("1.GESTION_CLIENTS \n2.GESTION_TAXI\n3.fin");
+            System.out.println("1.GESTION_CLIENTS \n2.GESTION_TAXI\n3.affiche_vue\n4.fin");
             System.out.print("choix de l'entité a gérer :");
             ch = sc.nextInt();
             sc.skip("\n");
@@ -53,15 +54,17 @@ public class Gestion_taxi {
                 case 2:
                     gvehicule.gesvehitaxi();
                     break;
-               
-                case 3:
+               case 3:
+                    vue.gesvue();
+                    break;
+                case 4:
                     System.out.println("FIN DE PROGRAMME");
                     break;
                 default:
                     System.out.println("choix incorrect");
             }
 
-        } while (ch != 3);
+        } while (ch != 4);
         dbconnexion.closeConnection();
     
     }
@@ -77,7 +80,7 @@ public class Gestion_taxi {
         }
     }*/
         
-         public static void main(String[] args) {
+         public static void main(String[] args) throws SQLException {
         Gestion_taxi gestiontaxi = new Gestion_taxi();
         gestiontaxi.gestion();
 
