@@ -41,7 +41,7 @@ public class Vehicule_taxi_DAO extends DAO<Vehicule_taxi> {
              pstm2.setString(1, obj.getImmatriculation());
             pstm2.setInt(2, obj.getCarburant());
             pstm2.setInt(3, obj.getPrixkm());
-             pstm2.setString(4, obj.getDescription());
+             
             try (ResultSet rs = pstm2.executeQuery()) {
                 if (rs.next()) {
                     int idtaxi = rs.getInt(1);

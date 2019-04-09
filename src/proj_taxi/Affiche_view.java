@@ -39,9 +39,14 @@ public class Affiche_view {
         affiche();
      }
      
-    public void affiche() throws SQLException {
-        System.out.println("les infon de la vue : ");
-        View_address_DAO.update(clActuel);
+    public void affiche() {
+        try {
+            int dt = ((View_address_DAO) View_address_DAO).read(clActuel);
+           
+            System.out.println("les infons  " + clActuel );
+        } catch (SQLException e) {
+            System.out.println("erreur " + e.getMessage());
+        }
     }
      
 }
